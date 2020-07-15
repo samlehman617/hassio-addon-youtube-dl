@@ -1,5 +1,6 @@
 {
   "squash": false,
+  "image": "samlehman617/hassio-addon-youtube-dl",
   "build_from": {
     "aarch64": "hassioaddons/base-aarch64:latest",
     "amd64": "hassioaddons/base-amd64:latest",

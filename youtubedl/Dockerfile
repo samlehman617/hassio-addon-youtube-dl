@@ -114,7 +114,7 @@ RUN echo "Running app..."
 
 # Move scripts into root.
 COPY run.sh /
-COPY config.json /
+# COPY config.json /
 COPY default.conf /
 RUN chmod a+x /run.sh
 ENTRYPOINT [ "/run.sh" ]
