@@ -10,7 +10,7 @@ change_config() {
 
     # App configurations
     TEMP_CONFIG=$(mktemp)
-    CONFIG="./data/config.json"
+    CONFIG="/default.conf"
 
     # Get URL config
     URL=$(bashio::config 'url' )

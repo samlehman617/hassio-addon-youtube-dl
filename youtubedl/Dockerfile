@@ -71,7 +71,7 @@ RUN \
 # cd /app && \
 
 # Use /app
-WORKDIR /app
+# WORKDIR /app
 
 # Copy the node deps into working dir.
 # COPY --chown=$UID:$GID [ "package.json", "package-lock.json", "/app/" ]
@@ -82,7 +82,7 @@ RUN \
   npm install && chown -R $UID:$GID ./ && \
   echo "Installed node modules."
 
-COPY --chown=$UID:$GID [ "./", "/app/" ]
+# COPY --chown=$UID:$GID [ "./", "/app/" ]
 # Copy the backend into working dir.
 # COPY --chown=$UID:$GID [ "./backend", '/app/' ]
 
@@ -113,6 +113,8 @@ EXPOSE 17442
 RUN echo "Running app..."
 
 # Move scripts into root.
-COPY data /
+COPY run.sh /
+COPY config.json /
+COPY default.conf /
 RUN chmod a+x /run.sh
 ENTRYPOINT [ "/run.sh" ]

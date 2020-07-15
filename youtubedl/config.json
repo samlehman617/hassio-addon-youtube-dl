@@ -1,11 +1,14 @@
 {
   "name": "YouTubeDL",
-  "version": "0.0.1",
+  "version": "dev",
   "slug": "youtubedl",
   "description": "Download videos from YouTube.",
   "url": "https://github.com/samlehman617/hassio-addon-youtube-dl",
   "startup": "application",
-  "init": true,
+  "ingress": true,
+  "ingress_port": 8998,
+  "panel_icon": "mdi:youtube",
+  "panel_title": "YouTube DL",
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
   "boot": "auto",
   "hassio_api": true,
@@ -29,7 +32,10 @@
     }
   },
   "ports": {
-    "17442/tcp": 8998
+    "17442/tcp": null
+  },
+  "ports_description": {
+    "17442/tcp": "Not required for Ingress"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
@@ -37,6 +43,7 @@
     "cerfile": "str",
     "keyfile": "str",
     "url": "str",
+    "youtubedl_ingress_user": "str?",
     "api": {
       "use_api": "bool",
       "api_key": "str",
